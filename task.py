@@ -1,6 +1,6 @@
 import task_manage
 
-def interface():
+def interface(tasks):
     while True:
         try:    
             print("Task\n1. Add task\n2. Edit task\n3. Delete task\n4. Print tasks\n5. Exit")
@@ -9,12 +9,12 @@ def interface():
             print(f"Error: {e}")
 
         if user_choice == 1:
-            task_manage.add_task()
+            task_manage.add_task(tasks)
         elif user_choice == 2:
-            task_manage.edit_task()
+            task_manage.edit_task(tasks)
         elif user_choice == 3:
-            task_manage.delete_task()
+            task_manage.delete_task(tasks)
         elif user_choice == 4:
-            task_manage.print_task()
+            task_manage.print_task(tasks)
         elif user_choice == 5:
             break
