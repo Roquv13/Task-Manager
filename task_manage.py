@@ -6,10 +6,12 @@ def get_task():
     except Exception as e:
         print(f"Error: {e}")
     
-
 def add_task(tasks):
-    name, text = get_task()
-    tasks[name] = text
+    try:
+        name, text = get_task()
+        tasks[name] = text
+    except Exception as e:
+        print(f"Error: {e}")
 
 def delete_task(tasks):
     name, text = get_task()
