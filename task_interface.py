@@ -15,3 +15,5 @@ while True:
         task_manage.delete_task()
     elif user_choice == 4:
         task_manage.print_task()
+    elif user_choice == 5:
+        break
