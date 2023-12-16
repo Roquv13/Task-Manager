@@ -4,7 +4,7 @@ import exceptions
 def interface(name_list, selected_list):
     while True:
         try:    
-            print(f"Task list '{name_list}'\n1. Add task\n2. Edit task\n3. Delete task\n4. Print tasks\n5. Clear tasks\n6. Exit")
+            print(f"\nTask list '{name_list}'\n1. Add task\n2. Edit task\n3. Delete task\n4. Print tasks\n5. Clear tasks\n6. Exit")
             user_choice = int(input("Select: "))
             if user_choice < 1 or user_choice > 6:
                 raise exceptions.BadValue("Number must be in range from 1 to 6.")
