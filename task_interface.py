@@ -9,3 +9,5 @@ while True:
 
     if user_choice == 1:
         task_manage.add_task()
+    elif user_choice == 2:
+        task_manage.edit_task()
