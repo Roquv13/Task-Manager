@@ -1,9 +1,17 @@
 import exceptions
 
+def get_name():
+    name = input("Enter name of task: ")
+    return name
+
+def get_text():
+    text = input("Enter text for task: ")
+    return text
+
 def get_task():
     try:
-        name = input("Enter name of task: ")
-        text = input("Enter text for task: ")
+        name = get_name()
+        text = get_text()
         return name, text
     except Exception as e:
         print(f"Error: {e}")
