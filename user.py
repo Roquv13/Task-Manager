@@ -1,4 +1,4 @@
-import tasks_list
+import list_manage
 import task
 import exceptions
 
@@ -13,14 +13,14 @@ def interface(lists):
             print(f"Error: {e}")
 
         if choice_int == 1:
-            tasks_list.create_list(lists)
+            list_manage.create_list(lists)
         elif choice_int == 2:
-            tasks_list.get_lists(lists)
-            name_list, selected_list = tasks_list.select_list(lists)
+            list_manage.get_lists(lists)
+            name_list, selected_list = list_manage.select_list(lists)
             task.interface(name_list, selected_list)
         elif choice_int == 3:
-            tasks_list.delete_list(lists)
+            list_manage.delete_list(lists)
         elif choice_int == 4:
-            tasks_list.get_lists(lists)
+            list_manage.get_lists(lists)
         elif choice_int == 5:
             break
