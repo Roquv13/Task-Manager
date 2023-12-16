@@ -17,4 +17,6 @@ def interface(tasks):
         elif user_choice == 4:
             task_manage.print_task(tasks)
         elif user_choice == 5:
+            task_manage.clear_tasks(tasks)
+        elif user_choice == 6:
             break
