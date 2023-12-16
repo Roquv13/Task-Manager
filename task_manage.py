@@ -16,5 +16,5 @@ def edit_task(tasks):
     tasks[name] = text
 
 def print_task(tasks):
-    for task, text in tasks:
+    for task, text in tasks.items():
         print(task, "-", text)
