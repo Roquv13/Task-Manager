@@ -12,15 +12,20 @@ def add_task(tasks):
     try:
         name, text = get_task()
         if name in tasks:
-            raise exceptions.ExistsException("Task with this name already exists")
+            raise exceptions.ExistsException("Task already exists")
         tasks[name] = text
         print(f"Task '{name}' added.")
     except Exception as e:
         print(f"Error: {e}")
 
 def delete_task(tasks):
-    name, text = get_task()
-    tasks.pop(name)
+    try:
+        name, text = get_task()
+        if name not in tasks:
+            raise exceptions.ExistsException("Task does not exists.")
+        tasks.pop(name)
+    except Exception as e:
+        print(f"Error: {e}")
 
 def edit_task(tasks):
     name, text = get_task()
