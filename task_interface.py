@@ -13,3 +13,5 @@ while True:
         task_manage.edit_task()
     elif user_choice == 3:
         task_manage.delete_task()
+    elif user_choice == 4:
+        task_manage.print_task()
