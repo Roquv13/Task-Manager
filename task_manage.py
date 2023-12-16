@@ -1,3 +1,5 @@
+import exceptions
+
 def get_task():
     try:
         name = input("Enter name of task: ")
@@ -9,6 +11,8 @@ def get_task():
 def add_task(tasks):
     try:
         name, text = get_task()
+        if name in tasks:
+            raise exceptions.ExistsException("Task with this name already exists")
         tasks[name] = text
         print(f"Task '{name}' added.")
     except Exception as e:
