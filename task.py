@@ -1,10 +1,13 @@
 import task_manage
+import exceptions
 
 def interface(tasks):
     while True:
         try:    
             print("Task\n1. Add task\n2. Edit task\n3. Delete task\n4. Print tasks\n5. Exit")
             user_choice = int(input("Select: "))
+            if user_choice < 1 or user_choice > 6:
+                raise exceptions.BadValue("Number must be in range from 1 to 6.")
         except Exception as e:
             print(f"Error: {e}")
 
