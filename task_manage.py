@@ -28,8 +28,13 @@ def delete_task(tasks):
         print(f"Error: {e}")
 
 def edit_task(tasks):
-    name, text = get_task()
-    tasks[name] = text
+    try:
+        name, text = get_task()
+        if name not in tasks:
+            raise exceptions.ExistsException("Task does not exists.")
+        tasks[name] = text
+    except Exception as e:
+        print(f"Error: {e}")
 
 def print_task(tasks):
     for task, text in tasks.items():
