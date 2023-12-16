@@ -1,5 +1,5 @@
-import task
+import user
 
-tasks = {}
+lists = {}
 
-task.interface(tasks)
+user.interface(lists)
