@@ -6,3 +6,6 @@ while True:
         user_choice = int(input("Select: "))
     except Exception as e:
         print(f"Error: {e}")
+
+    if user_choice == 1:
+        task_manage.add_task()
