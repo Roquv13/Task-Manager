@@ -12,3 +12,7 @@ def add_task():
 def delete_task():
     name, text = get_task()
     tasks.pop(name)
+
+def edit_task():
+    name, text = get_task()
+    tasks[name] = text
