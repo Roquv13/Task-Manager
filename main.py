@@ -1,6 +1,5 @@
-import task_manage
+import task
 
 tasks = {}
 
-task_manage.add_task(tasks)
-task_manage.print_task(tasks)
+task.interface(tasks)
