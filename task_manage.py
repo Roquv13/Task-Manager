@@ -1,7 +1,11 @@
 def get_task():
-    name = input("Enter name of task: ")
-    text = input("Enter text for task: ")
-    return name, text
+    try:
+        name = input("Enter name of task: ")
+        text = input("Enter text for task: ")
+        return name, text
+    except Exception as e:
+        print(f"Error: {e}")
+    
 
 def add_task(tasks):
     name, text = get_task()
