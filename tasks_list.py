@@ -21,6 +21,7 @@ def select_list(lists):
         return None, None
     
 def delete_list(lists):
+    get_lists()
     try:
         list_name = input("Enter name of list to delete or type EXIT: ")
         if list_name.upper() == "EXIT":
@@ -32,3 +33,11 @@ def delete_list(lists):
             print(f"List '{list_name} deleted.'")
     except Exception as e:
         print(f"Error: {e}")
+
+def get_lists(lists):
+    if len(lists) == 0:
+        print("There is no list.")
+    else:
+        print("All of created lists:")
+        for name_list, list in lists.items():
+            print(name_list)
