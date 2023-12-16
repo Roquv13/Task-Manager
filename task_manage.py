@@ -47,3 +47,6 @@ def edit_task(tasks):
 def print_task(tasks):
     for task, text in tasks.items():
         print(task, "-", text)
+
+def clear_tasks(tasks):
+    tasks.clear()
