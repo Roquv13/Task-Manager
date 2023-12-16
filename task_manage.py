@@ -14,3 +14,7 @@ def delete_task(tasks):
 def edit_task(tasks):
     name, text = get_task()
     tasks[name] = text
+
+def print_task(tasks):
+    for task, text in tasks:
+        print(task, "-", text)
