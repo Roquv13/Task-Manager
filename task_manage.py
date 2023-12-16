@@ -10,6 +10,7 @@ def add_task(tasks):
     try:
         name, text = get_task()
         tasks[name] = text
+        print(f"Task '{name}' added.")
     except Exception as e:
         print(f"Error: {e}")
 
