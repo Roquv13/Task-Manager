@@ -28,7 +28,7 @@ def add_task(tasks):
 
 def delete_task(tasks):
     try:
-        name, text = get_task()
+        name = get_name()
         if name not in tasks:
             raise exceptions.ExistsException("Task does not exists.")
         tasks.pop(name)
