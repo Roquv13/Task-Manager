@@ -16,7 +16,7 @@ def get_task():
     except Exception as e:
         print(f"Error: {e}")
     
-def add_task(tasks):
+def add(tasks):
     try:
         name, text = get_task()
         if name in tasks:

@@ -12,7 +12,7 @@ def interface(name_list, selected_list):
             print(f"Error: {e}")
 
         if user_choice == 1:
-            task_manage.add_task(selected_list)
+            task_manage.add(selected_list)
         elif user_choice == 2:
             task_manage.edit(selected_list)
         elif user_choice == 3:
