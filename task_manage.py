@@ -26,7 +26,7 @@ def add_task(tasks):
     except Exception as e:
         print(f"Error: {e}")
 
-def delete_task(tasks):
+def delete(tasks):
     try:
         name = get_name()
         if name not in tasks:

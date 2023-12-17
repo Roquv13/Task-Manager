@@ -16,7 +16,7 @@ def interface(name_list, selected_list):
         elif user_choice == 2:
             task_manage.edit(selected_list)
         elif user_choice == 3:
-            task_manage.delete_task(selected_list)
+            task_manage.delete(selected_list)
         elif user_choice == 4:
             task_manage.print(selected_list)
         elif user_choice == 5:
