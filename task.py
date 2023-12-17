@@ -17,6 +17,7 @@ def interface(name_list, selected_list):
             task_manage.add(selected_list)
         elif user_choice == 2:
             task_manage.completed(selected_list, completed)
+            task_manage.display(completed)
         elif user_choice == 3:
             task_manage.edit(selected_list)
         elif user_choice == 4:
