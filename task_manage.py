@@ -50,3 +50,10 @@ def print_task(tasks):
 
 def clear_tasks(tasks):
     tasks.clear()
+
+def completed(tasks, completed_tasks):
+    try:
+        name = get_name()
+        text = tasks.get(name)
+        if name not in tasks:
+            raise exceptions.ExistsException("Task does not exists.")
