@@ -35,7 +35,7 @@ def delete_task(tasks):
     except Exception as e:
         print(f"Error: {e}")
 
-def edit_task(tasks):
+def edit(tasks):
     try:
         name, text = get_task()
         if name not in tasks:
