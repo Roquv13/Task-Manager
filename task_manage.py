@@ -44,7 +44,7 @@ def edit_task(tasks):
     except Exception as e:
         print(f"Error: {e}")
 
-def print_task(tasks):
+def print(tasks):
     for task, text in tasks.items():
         print(task, "-", text)
 
