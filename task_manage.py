@@ -48,7 +48,7 @@ def print_task(tasks):
     for task, text in tasks.items():
         print(task, "-", text)
 
-def clear_tasks(tasks):
+def clear(tasks):
     tasks.clear()
 
 def completed(tasks, completed_tasks):
