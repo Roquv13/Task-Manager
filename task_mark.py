@@ -1,6 +1,9 @@
+import task_manage
+import exceptions
+
 def completed(tasks, completed_tasks):
     try:
-        name = get_name()
+        name = task_manage.get_name()
         text = tasks.get(name)
         if name not in tasks:
             raise exceptions.ExistsException("Task does not exists.")
