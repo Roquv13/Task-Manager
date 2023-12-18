@@ -15,6 +15,14 @@ def get_task():
         return name, text
     except Exception as e:
         print(f"Error: {e}")
+
+def get_tasks(tasks):
+    if len(tasks) == 0:
+            print("There is no task.")
+    else:
+        print("All of created tasks:")
+        for name_task, task in tasks.items():
+            print(name_task)
     
 def add(tasks):
     try:
@@ -53,7 +61,7 @@ def clear(tasks):
 
 def select(tasks):
     try:
-        name = input("Enter name of list to select: ")
+        name = input("Enter name of task to select: ")
         if name not in tasks:
             raise exceptions.ExistsException("Task not found.")
         return name, tasks[name]
