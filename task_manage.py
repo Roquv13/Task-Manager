@@ -53,8 +53,14 @@ def edit(tasks):
         print(f"Error: {e}")
 
 def display(tasks):
-    for task, text in tasks.items():
-        print(task, "-", text)
+    try:
+        if len(tasks) == 0:
+            raise exceptions.ExistsException("Task does not exists.")
+        else:
+            for task, text in tasks.items():
+                print(task, "-", text)
+    except Exception as e:
+        print(f"Error: {e}")
 
 def clear(tasks):
     tasks.clear()
