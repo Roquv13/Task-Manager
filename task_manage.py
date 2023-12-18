@@ -50,3 +50,13 @@ def display(tasks):
 
 def clear(tasks):
     tasks.clear()
+
+def select(tasks):
+    try:
+        name = input("Enter name of list to select: ")
+        if name not in tasks:
+            raise exceptions.ExistsException("Task not found.")
+        return name, tasks[name]
+    except Exception as e:
+        print(f"Error: {e}")
+        return None, None
