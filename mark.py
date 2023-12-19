@@ -1,6 +1,6 @@
 import task_manage
 import exceptions
-import task_mark
+import mark_manage
 
 def interface(tasks):
     name_task, selected_task = task_manage.select(tasks) 
@@ -14,12 +14,12 @@ def interface(tasks):
             print(f"Error: {e}")
 
         if user_choice == 1:
-            task_mark.completed(name_task, selected_task)
+            mark_manage.completed(name_task, selected_task)
         elif user_choice == 2:
-            task_mark.not_completed(name_task, selected_task)
+            mark_manage.not_completed(name_task, selected_task)
         elif user_choice == 3:
-            task_mark.in_progress(name_task, selected_task)
+            mark_manage.in_progress(name_task, selected_task)
         elif user_choice == 4:
-            task_mark.important(name_task, selected_task)
+            mark_manage.important(name_task, selected_task)
         elif user_choice == 5:
             break
