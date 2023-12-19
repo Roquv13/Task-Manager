@@ -26,6 +26,7 @@ def interface(tasks):
 completed_list = {}
 not_completed_list = {}
 in_progress_list = {}
+important_list = {}
 
 def completed(name_task, selected_task):
     try:
@@ -48,5 +49,13 @@ def in_progress(name_task, selected_task):
         in_progress_list[name_task] = selected_task
         print("Task marked as 'in progress'")
         print(in_progress_list)
+    except Exception as e:
+        print(f"Error: {e}")
+
+def important(name_task, selected_task):
+    try:
+        important_list[name_task] = selected_task
+        print("Task marked as important")
+        print(important_list)
     except Exception as e:
         print(f"Error: {e}")
