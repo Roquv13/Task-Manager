@@ -30,9 +30,7 @@ def add(tasks):
         name, text = get_task()
         if name in tasks:
             raise exceptions.ExistsException("Task already exists")
-        mark = manage.get_mark(text)
-        values = [text, mark]
-        tasks[name] = values
+        tasks[name] = text
         print(f"Task '{name}' added.")
     except Exception as e:
         print(f"Error: {e}")
@@ -61,7 +59,7 @@ def display(tasks):
             raise exceptions.ExistsException("Task does not exists.")
         else:
             for task, text in tasks.items():
-                print(task, "-", text)
+                print(task, "-", text, "-", manage.get_mark(task))
     except Exception as e:
         print(f"Error: {e}")
 
