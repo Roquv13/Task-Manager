@@ -2,7 +2,7 @@ import list.manage as manage
 import task.interface as interface
 import exceptions
 
-def interface(lists):
+def menu(lists):
     while True:
         print("\nUser Menu\n1. Create a new list\n2. Select list\n3. Delete list\n4. Names of lists\n5. Exit")
         try:
@@ -17,7 +17,7 @@ def interface(lists):
         elif choice_int == 2:
             manage.get_lists(lists)
             name_list, selected_list = manage.select(lists)
-            interface.interface(name_list, selected_list)
+            interface.menu(name_list, selected_list)
         elif choice_int == 3:
             manage.delete(lists)
         elif choice_int == 4:

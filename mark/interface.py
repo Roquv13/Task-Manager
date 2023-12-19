@@ -1,9 +1,9 @@
-import task.manage as manage
+import task.manage
 import exceptions
 import mark.manage as manage
 
-def interface(tasks):
-    name_task, selected_task = manage.select(tasks) 
+def menu(tasks):
+    name_task, selected_task = task.manage.select(tasks) 
     while True:
         try:   
             print(f"\nMark task '{name_task}'\n1. Completed\n2. Not completed\n3. In progress\n4. Important\n5. Back")

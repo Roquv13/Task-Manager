@@ -2,7 +2,7 @@ import task.manage as manage
 import exceptions
 import mark.interface as interface
 
-def interface(name_list, selected_list):
+def menu(name_list, selected_list):
     while True:
         try:    
             print(f"\nTask list '{name_list}'\n1. Add task\n2. Select Task\n3. Edit task\n4. Delete task\n5. Print tasks\n6. Clear tasks\n7. Back")
@@ -16,7 +16,7 @@ def interface(name_list, selected_list):
             manage.add(selected_list)
         elif user_choice == 2:
             manage.get_tasks(selected_list)
-            interface.interface(selected_list)
+            interface.menu(selected_list)
         elif user_choice == 3:
             manage.edit(selected_list)
         elif user_choice == 4:
