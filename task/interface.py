@@ -1,6 +1,6 @@
-import task_manage
+import task.manage as manage
 import exceptions
-import mark
+import mark.interface as interface
 
 def interface(name_list, selected_list):
     while True:
@@ -13,17 +13,17 @@ def interface(name_list, selected_list):
             print(f"Error: {e}")
 
         if user_choice == 1:
-            task_manage.add(selected_list)
+            manage.add(selected_list)
         elif user_choice == 2:
-            task_manage.get_tasks(selected_list)
-            mark.interface(selected_list)
+            manage.get_tasks(selected_list)
+            interface.interface(selected_list)
         elif user_choice == 3:
-            task_manage.edit(selected_list)
+            manage.edit(selected_list)
         elif user_choice == 4:
-            task_manage.delete(selected_list)
+            manage.delete(selected_list)
         elif user_choice == 5:
-            task_manage.display(selected_list)
+            manage.display(selected_list)
         elif user_choice == 6:
-            task_manage.clear(selected_list)
+            manage.clear(selected_list)
         elif user_choice == 7:
             break

@@ -1,5 +1,5 @@
-import list_manage
-import task
+import list.manage as manage
+import task.interface as interface
 import exceptions
 
 def interface(lists):
@@ -13,14 +13,14 @@ def interface(lists):
             print(f"Error: {e}")
 
         if choice_int == 1:
-            list_manage.create(lists)
+            manage.create(lists)
         elif choice_int == 2:
-            list_manage.get_lists(lists)
-            name_list, selected_list = list_manage.select(lists)
-            task.interface(name_list, selected_list)
+            manage.get_lists(lists)
+            name_list, selected_list = manage.select(lists)
+            interface.interface(name_list, selected_list)
         elif choice_int == 3:
-            list_manage.delete(lists)
+            manage.delete(lists)
         elif choice_int == 4:
-            list_manage.get_lists(lists)
+            manage.get_lists(lists)
         elif choice_int == 5:
             break

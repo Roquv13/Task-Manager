@@ -1,5 +1,5 @@
-import user
+import list.interface as interface
 
 lists = {}
 
-user.interface(lists)
+interface.interface(lists)
