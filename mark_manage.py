@@ -5,6 +5,18 @@ important_list = {}
 
 marks = [completed_list, not_completed_list, in_progress_list, important_list]
 
+def get_mark(name_task):
+    if name_task in completed_list:
+        return "completed"
+    elif name_task in not_completed_list:
+        return "not completed"
+    elif name_task in not_completed_list:
+        return "in progress"
+    elif name_task in not_completed_list:
+        return "important"
+    else:
+        return "not marked"
+    
 def delete_mark(name_task, mark_list):
     if name_task in mark_list:
         mark_list.pop(name_task)
