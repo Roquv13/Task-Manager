@@ -1,8 +1,6 @@
 import task_manage
 import exceptions
 
-completed_tasks = {}
-
 def interface(tasks):
     name_task, selected_task = task_manage.select(tasks) 
     while True:
@@ -15,7 +13,7 @@ def interface(tasks):
             print(f"Error: {e}")
 
         if user_choice == 1:
-            completed(name_task, selected_task, tasks)
+            completed(name_task, selected_task)
         elif user_choice == 2:
             print("Not completed")
         elif user_choice == 3:
@@ -25,11 +23,21 @@ def interface(tasks):
         elif user_choice == 5:
             break
 
-def completed(name_task, selected_task, tasks):
+completed = {}
+not_completed = {}
+
+def completed(name_task, selected_task):
     try:
-        completed_tasks[name_task] = selected_task
-        tasks.pop(name_task)
+        completed[name_task] = selected_task
         print("Task mark as completed")
-        print(completed_tasks)
+        print(completed)
+    except Exception as e:
+        print(f"Error: {e}")
+
+def not_completed(name_task, selected_task):
+    try:
+        not_completed[name_task] = selected_task
+        print("Task mark as not completed")
+        print(not_completed)
     except Exception as e:
         print(f"Error: {e}")
