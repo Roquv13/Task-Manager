@@ -15,11 +15,11 @@ def interface(tasks):
         if user_choice == 1:
             completed(name_task, selected_task)
         elif user_choice == 2:
-            print("Not completed")
+            not_completed(name_task, selected_task)
         elif user_choice == 3:
-            print("In progress")
+            in_progress(name_task, selected_task)
         elif user_choice == 4:
-            print("Important")
+            important(name_task, selected_task)
         elif user_choice == 5:
             break
 
