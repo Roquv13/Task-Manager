@@ -3,8 +3,17 @@ not_completed_list = {}
 in_progress_list = {}
 important_list = {}
 
+marks = [completed_list, not_completed_list, in_progress_list, important_list]
+
+def delete_mark(name_task, mark_list):
+    if name_task in mark_list:
+        mark_list.pop(name_task)
+        print("MARK REMOVED")
+
 def completed(name_task, selected_task):
     try:
+        for mark in marks:
+            delete_mark(name_task, mark)
         completed_list[name_task] = selected_task
         print("Task marked as 'completed'")
         print(completed_list)
@@ -13,6 +22,8 @@ def completed(name_task, selected_task):
 
 def not_completed(name_task, selected_task):
     try:
+        for mark in marks:
+            delete_mark(name_task, mark)
         not_completed_list[name_task] = selected_task
         print("Task marked as 'not completed'")
         print(not_completed_list)
@@ -21,6 +32,8 @@ def not_completed(name_task, selected_task):
 
 def in_progress(name_task, selected_task):
     try:
+        for mark in marks:
+            delete_mark(name_task, mark)
         in_progress_list[name_task] = selected_task
         print("Task marked as 'in progress'")
         print(in_progress_list)
@@ -29,6 +42,8 @@ def in_progress(name_task, selected_task):
 
 def important(name_task, selected_task):
     try:
+        for mark in marks:
+            delete_mark(name_task, mark)
         important_list[name_task] = selected_task
         print("Task marked as important")
         print(important_list)
