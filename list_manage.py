@@ -1,6 +1,6 @@
 import exceptions
 
-def create_list(lists):
+def create(lists):
     try:
         list_name = input("Enter name of list: ")
         if list_name in lists:
@@ -10,7 +10,7 @@ def create_list(lists):
     except Exception as e:
         print(f"Error: {e}")
 
-def select_list(lists):
+def select(lists):
     try:
         list_name = input("Enter name of list to select: ")
         if list_name not in lists:
@@ -20,7 +20,7 @@ def select_list(lists):
         print(f"Error: {e}")
         return None, None
     
-def delete_list(lists):
+def delete(lists):
     get_lists()
     try:
         list_name = input("Enter name of list to delete or type EXIT: ")

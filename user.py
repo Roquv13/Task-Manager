@@ -13,13 +13,13 @@ def interface(lists):
             print(f"Error: {e}")
 
         if choice_int == 1:
-            list_manage.create_list(lists)
+            list_manage.create(lists)
         elif choice_int == 2:
             list_manage.get_lists(lists)
-            name_list, selected_list = list_manage.select_list(lists)
+            name_list, selected_list = list_manage.select(lists)
             task.interface(name_list, selected_list)
         elif choice_int == 3:
-            list_manage.delete_list(lists)
+            list_manage.delete(lists)
         elif choice_int == 4:
             list_manage.get_lists(lists)
         elif choice_int == 5:
