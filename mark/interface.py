@@ -10,16 +10,15 @@ def menu(tasks):
             user_choice = int(input("Select: "))
             if user_choice < 1 or user_choice > 5:
                 raise exceptions.BadValue("Number must be in range from 1 to 5.")
+            if user_choice == 1:
+                manage.completed(name_task, selected_task)
+            elif user_choice == 2:
+                manage.not_completed(name_task, selected_task)
+            elif user_choice == 3:
+                manage.in_progress(name_task, selected_task)
+            elif user_choice == 4:
+                manage.important(name_task, selected_task)
+            elif user_choice == 5:
+                break
         except Exception as e:
             print(f"Error: {e}")
-
-        if user_choice == 1:
-            manage.completed(name_task, selected_task)
-        elif user_choice == 2:
-            manage.not_completed(name_task, selected_task)
-        elif user_choice == 3:
-            manage.in_progress(name_task, selected_task)
-        elif user_choice == 4:
-            manage.important(name_task, selected_task)
-        elif user_choice == 5:
-            break
