@@ -10,9 +10,9 @@ def get_mark(name_task):
         return "completed"
     elif name_task in not_completed_list:
         return "not completed"
-    elif name_task in not_completed_list:
+    elif name_task in in_progress_list:
         return "in progress"
-    elif name_task in not_completed_list:
+    elif name_task in important_list:
         return "important"
     else:
         return "not marked"
