@@ -59,7 +59,7 @@ def display(tasks):
             raise exceptions.ExistsException("Task does not exists.")
         else:
             for task, text in tasks.items():
-                print(task, "-", text, "-", manage.get_mark(task))
+                print(task, "-", text, "-", manage.get(task))
     except Exception as e:
         print(f"Error: {e}")
 
