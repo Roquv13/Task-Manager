@@ -3,3 +3,6 @@ from datetime import date
 def current():
     today = date.today()
     return today
+
+def deadline():
+    rem_date = input("Enter date in format year.month.day")
