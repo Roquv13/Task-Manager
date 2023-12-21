@@ -10,3 +10,4 @@ def deadline():
 
 def days_to_end():
     days = deadline() -  current()
+    return days
