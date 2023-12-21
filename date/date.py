@@ -6,3 +6,4 @@ def current():
 
 def deadline():
     rem_date = input("Enter date in format year.month.day")
+    return rem_date
