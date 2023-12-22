@@ -1,4 +1,4 @@
-from datetime import date
+import datetime
 
 def current():
     today = date.today()
@@ -6,8 +6,13 @@ def current():
     return today_nums
 
 def deadline():
-    rem_date = input("Enter date in format year/month/day")
-    return rem_date
+    while True:
+        task_date_in = input("Enter date in format year/month/day")
+        try:
+            task_date = datetime.strftime(task_date_in, "%d/%m/%Y")
+            return task_date
+        except ValueError:
+            print("Invalid date format. Please enter the date in the correct format (year/month/day)")
 
 def days_to_end():
     days = deadline() -  current()
