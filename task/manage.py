@@ -1,5 +1,6 @@
 import exceptions
 import mark.manage as manage
+import date.manage
 
 def get_name():
     name = input("Enter name of task: ")
@@ -31,8 +32,9 @@ def add(tasks):
         if name in tasks:
             raise exceptions.ExistsException("Task already exists")
         tasks[name] = text
+        date.manage.get_deadline(name)
         print(f"Task '{name}' added.")
-    except Exception as e:
+    except exceptions.ExistsException as e:
         print(f"Error: {e}")
 
 def delete(tasks):
