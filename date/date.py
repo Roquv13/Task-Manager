@@ -2,10 +2,11 @@ from datetime import date
 
 def current():
     today = date.today()
-    return today
+    today_nums = today.strftime("%d/%m/%Y")
+    return today_nums
 
 def deadline():
-    rem_date = input("Enter date in format year.month.day")
+    rem_date = input("Enter date in format year/month/day")
     return rem_date
 
 def days_to_end():
