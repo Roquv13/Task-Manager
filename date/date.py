@@ -13,10 +13,17 @@ def remaining_days(deadline):
     days_left = (deadline - today).days
     return days_left
 
+def get_deadline(task):
+    if task in deadline:
+        task_deadline = deadline.get(task)
+        return task_deadline
+    else:
+        print("This task has not setted deadline")
+
 def deadline(task):
     if task in deadline:
         print("Task has already setted deadline")
-        task_deadline = "deadline"
+        task_deadline = get_deadline(task)
         print(f"Deadline for this task {task_deadline}")
     else:
         while True:
