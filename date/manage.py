@@ -1,6 +1,6 @@
 from datetime import datetime
 
-deadline = {}
+task_deadlines = {}
 
 def current():
     today = datetime.today()
@@ -8,28 +8,33 @@ def current():
     today_date = datetime.strptime(today_nums, "%d/%m/%Y").date()
     return today_date
 
-def remaining_days(deadline):
+def remaining_days(task):
     today = current()
-    days_left = (deadline - today).days
-    return days_left
+    if task in task_deadlines:
+        days_left = (task_deadlines[task] - today).days
+        return days_left
+    else:
+        return None
 
 def get_deadline(task):
-    if task in deadline:
-        task_deadline = deadline.get(task)
+    if task in task_deadlines:
+        task_deadline = task_deadlines[task]
         return task_deadline
     else:
-        print("This task has not setted deadline")
+        set_deadline(task)
 
-def deadline(task):
-    if task in deadline:
-        print("Task has already setted deadline")
+def set_deadline(task):
+    if task in task_deadlines:
+        print("Task already has a deadline set.")
         task_deadline = get_deadline(task)
-        print(f"Deadline for this task {task_deadline}")
+        print(f"Deadline for this task: {task_deadline}")
     else:
         while True:
             rem_date_str = input("Enter date in format day/month/year: ")
             try:
                 rem_date = datetime.strptime(rem_date_str, "%d/%m/%Y").date()
-                deadline[task] = rem_date
+                task_deadlines[task] = rem_date
+                print(f"Deadline set for task '{task}': {rem_date.strftime('%d/%m/%Y')}")
+                break
             except ValueError:
                 print("Invalid date format. Please enter the date in the correct format (day/month/year)")
