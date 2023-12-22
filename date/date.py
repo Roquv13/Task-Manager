@@ -19,3 +19,7 @@ def deadline():
             return rem_date
         except ValueError:
             print("Invalid date format. Please enter the date in the correct format (day/month/year)")
+
+user_deadline = deadline()
+days_left = remaining_days(user_deadline)
+print("Remaining days to the deadline:", days_left)
