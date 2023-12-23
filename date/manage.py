@@ -12,7 +12,10 @@ def remaining_days(task):
     today = current()
     if task in task_deadlines:
         days_left = (task_deadlines[task] - today).days
-        return days_left
+        if days_left >= 0:
+            return f"remaining days: {days_left}"
+        else:
+            return f"days after: {abs(days_left)}"
     else:
         return None
 
