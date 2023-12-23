@@ -56,8 +56,9 @@ def edit(tasks):
             user_choice = int(input("Select: "))
             if user_choice == 1:
                 text = tasks.get(name)
-                name = get_name()
-                tasks[name] = text
+                tasks.pop(name)
+                new_name = get_name()
+                tasks[new_name] = text
             elif user_choice == 2:
                 text = get_text()
                 tasks[name] = text
