@@ -51,6 +51,10 @@ def edit(tasks):
         name, text = get_task()
         if name not in tasks:
             raise exceptions.ExistsException("Task does not exists.")
+        
+        print(f"Task Edit\n1. Name\n2. Text\n3. Date\n4. Back")
+        user_choice = int(input("Select: "))
+        
         tasks[name] = text
     except Exception as e:
         print(f"Error: {e}")
