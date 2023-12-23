@@ -48,14 +48,23 @@ def delete(tasks):
 
 def edit(tasks):
     try:
-        name, text = get_task()
+        name = get_name()
         if name not in tasks:
             raise exceptions.ExistsException("Task does not exists.")
-        
-        print(f"Task Edit\n1. Name\n2. Text\n3. Date\n4. Back")
-        user_choice = int(input("Select: "))
-        
-        tasks[name] = text
+        while True:
+            print(f"Task Edit\n1. Name\n2. Text\n3. Date\n4. Back")
+            user_choice = int(input("Select: "))
+            if user_choice == 1:
+                text = tasks.get(name)
+                name = get_name()
+                tasks[name] = text
+            elif user_choice == 2:
+                text = get_text()
+                tasks[name] = text
+            elif user_choice == 3:
+                print("change date in progress")
+            elif user_choice == 4:
+                break
     except Exception as e:
         print(f"Error: {e}")
 
