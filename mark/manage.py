@@ -16,7 +16,20 @@ def get(name_task):
         return "important"
     else:
         return "not marked"
-    
+
+def add(tasks ,name_task, mark):
+    text = tasks[name_task]
+    if mark == "completed":
+        completed(name_task, text)
+    elif mark == "not completed":
+        not_completed(name_task, text)
+    elif mark == "in_progress_list":
+        in_progress(name_task, text)
+    elif mark == "important_list":
+        important(name_task, text)
+    else:
+        return "not marked"
+
 def delete(name_task, mark_list):
     if name_task in mark_list:
         mark_list.pop(name_task)
