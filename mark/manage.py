@@ -17,7 +17,7 @@ def get(name_task):
     else:
         return "not marked"
 
-def add(tasks ,name_task, mark):
+def add(tasks ,name_task,  mark):
     text = tasks[name_task]
     if mark == "completed":
         completed(name_task, text)
