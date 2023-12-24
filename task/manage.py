@@ -1,5 +1,5 @@
 import exceptions
-import mark.manage as manage
+import mark.manage
 import date.manage
 
 def get_name():
@@ -55,10 +55,12 @@ def edit(tasks):
             print(f"Task Edit\n1. Name\n2. Text\n3. Date\n4. Back")
             user_choice = int(input("Select: "))
             if user_choice == 1:
-                text = tasks.get(name)
-                tasks.pop(name)
+                #Add new name with text
+                old_name = name
+                text = tasks.get(old_name)
                 new_name = get_name()
                 tasks[new_name] = text
+                
             elif user_choice == 2:
                 text = get_text()
                 tasks[name] = text
@@ -75,7 +77,7 @@ def display(tasks):
             raise exceptions.ExistsException("Task does not exists.")
         else:
             for task, text in tasks.items():
-                print(task, "-", text, "-", manage.get(task), "-", date.manage.remaining_days(task))
+                print(task, "-", text, "-", mark.manage.get(task), "-", date.manage.remaining_days(task))
     except Exception as e:
         print(f"Error: {e}")
 
