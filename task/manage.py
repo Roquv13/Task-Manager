@@ -63,6 +63,8 @@ def edit(tasks):
                 #Add mark
                 mark_new = mark.manage.get(name)
                 mark.manage.add(tasks, new_name, mark_new)
+                #Add date
+                
                 #Pop out task with old name
                 tasks.pop(old_name)
             elif user_choice == 2:
