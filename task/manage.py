@@ -60,7 +60,9 @@ def edit(tasks):
                 text = tasks.get(old_name)
                 new_name = get_name()
                 tasks[new_name] = text
-                
+                #Add mark
+                mark_new = mark.manage.get(name)
+                mark.manage.add(tasks, new_name, mark_new)
             elif user_choice == 2:
                 text = get_text()
                 tasks[name] = text
