@@ -32,7 +32,7 @@ def add(tasks):
         if name in tasks:
             raise exceptions.ExistsException("Task already exists")
         tasks[name] = text
-        date.manage.get_deadline(name)
+        date.manage.set_deadline(name)
         print(f"Task '{name}' added.")
     except exceptions.ExistsException as e:
         print(f"Error: {e}")
