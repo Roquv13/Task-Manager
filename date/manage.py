@@ -24,7 +24,7 @@ def get_deadline(task):
         task_deadline = task_deadlines[task]
         return task_deadline
     else:
-        set_deadline(task)
+        print("Deadline is not setted")
 
 def set_deadline(task):
     if task in task_deadlines:
