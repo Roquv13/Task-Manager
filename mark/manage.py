@@ -28,7 +28,7 @@ def add(tasks ,name_task,  mark):
     elif mark == "important_list":
         important(name_task, text)
     else:
-        return "not marked"
+        print("Not marked")
 
 def delete(name_task, mark_list):
     if name_task in mark_list:
