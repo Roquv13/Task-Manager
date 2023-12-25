@@ -61,9 +61,10 @@ def edit(tasks):
                 new_name = get_name()
                 tasks[new_name] = text
                 #Add mark
-                mark_new = mark.manage.get(name)
+                mark_new = mark.manage.get(old_name)
                 mark.manage.add(tasks, new_name, mark_new)
                 #Add date
+                deadline_old = date.manage.get_deadline(old_name)
                 
                 #Pop out task with old name
                 tasks.pop(old_name)
@@ -72,6 +73,7 @@ def edit(tasks):
                 tasks[name] = text
             elif user_choice == 3:
                 print("change date in progress")
+                #deadline_new = date.manage.set_deadline(new_name)
             elif user_choice == 4:
                 break
     except Exception as e:
