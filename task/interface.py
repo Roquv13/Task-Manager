@@ -19,6 +19,7 @@ def menu(name_list, selected_list):
                 manage.get_tasks(selected_list)
                 manage.edit(selected_list)
             elif user_choice == 4:
+                manage.get_tasks(selected_list)
                 manage.delete(selected_list)
             elif user_choice == 5:
                 manage.display(selected_list)
