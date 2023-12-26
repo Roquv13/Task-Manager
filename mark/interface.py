@@ -3,6 +3,7 @@ import exceptions
 import mark.manage as manage
 
 def menu(tasks):
+    task.manage.get_tasks(tasks)
     name_task, selected_task = task.manage.select(tasks) 
     while True:
         try:   
