@@ -12,7 +12,6 @@ def menu(name_list, selected_list):
             if user_choice == 1:
                 manage.add(selected_list)
             elif user_choice == 2:
-                manage.get_tasks(selected_list)
                 if len(selected_list) != 0:
                     interface.menu(selected_list)
             elif user_choice == 3:
