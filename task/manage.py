@@ -60,7 +60,7 @@ def edit(tasks):
                 text = tasks.get(old_name)
                 new_name = get_name()
                 tasks[new_name] = text
-                #Add mark
+#Add mark - not working properly
                 mark_new = mark.manage.get(old_name)
                 mark.manage.add(tasks, new_name, mark_new)
                 #Add date
