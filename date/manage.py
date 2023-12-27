@@ -26,6 +26,13 @@ def get_deadline(task):
     else:
         print("Deadline is not setted")
 
+def add_deadline(task, deadline):
+    try:
+        task_deadlines[task] = deadline
+        print(f"Deadline set for task {task}")
+    except ValueError:
+        print("Invalid date format.")
+
 def set_deadline(task):
     if task in task_deadlines:
         print("Task already has a deadline set.")
