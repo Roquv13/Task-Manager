@@ -65,7 +65,7 @@ def edit(tasks):
                 mark.manage.add(tasks, new_name, mark_new)
                 #Add date
                 deadline_old = date.manage.task_deadlines.get(old_name)
-                
+                date.manage.add_deadline(new_name, deadline_old)
                 #Pop out task with old name
                 tasks.pop(old_name)
             elif user_choice == 2:
