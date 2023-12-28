@@ -48,3 +48,10 @@ def set_deadline(task):
                 break
             except ValueError:
                 print("Invalid date format. Please enter the date in the correct format (day/month/year)")
+
+def delete(task):
+    if task in task_deadlines:
+        task_deadlines.pop(task)
+        print(f"Task '{task}' deadline is deleted.")
+    else:
+        print("Task hasn't deadline setted yet.")
