@@ -29,6 +29,11 @@ def move(old_name, new_name, tasks):
         important(new_name, selected_task)
     else:
         print("Not marked")
+    try:
+        for mark in marks:
+            delete(old_name, mark)
+    except Exception as e:
+        print(f"Error: {e}")
 
 def delete(name_task, mark_list):
     if name_task in mark_list:
