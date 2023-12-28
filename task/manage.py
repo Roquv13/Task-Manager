@@ -60,10 +60,9 @@ def edit(tasks):
                 text = tasks.get(old_name)
                 new_name = get_name()
                 tasks[new_name] = text
-#Add mark - not working properly
-                mark_new = mark.manage.get(old_name)
-                mark.manage.add(tasks, new_name, mark_new)
-                #Add date
+                #Move mark
+                mark.manage.move(old_name, new_name, tasks)
+                #Move date
                 deadline_old = date.manage.task_deadlines.get(old_name)
                 date.manage.add_deadline(new_name, deadline_old)
                 #Pop out task with old name
