@@ -1,3 +1,6 @@
+import task
+import exceptions
+
 completed_list = {}
 not_completed_list = {}
 in_progress_list = {}
@@ -79,3 +82,25 @@ def important(name_task, selected_task):
         print(important_list)
     except Exception as e:
         print(f"Error: {e}")
+
+def menu(tasks):
+    task.get_tasks(tasks)
+    name_task, selected_task = task.select(tasks) 
+    while True:
+        try:   
+            print(f"\nMark task '{name_task}'\n1. Completed\n2. Not completed\n3. In progress\n4. Important\n5. Back")
+            user_choice = int(input("Select: "))
+            if user_choice < 1 or user_choice > 5:
+                raise exceptions.BadValue("Number must be in range from 1 to 5.")
+            if user_choice == 1:
+                completed(name_task, selected_task)
+            elif user_choice == 2:
+                not_completed(name_task, selected_task)
+            elif user_choice == 3:
+                in_progress(name_task, selected_task)
+            elif user_choice == 4:
+                important(name_task, selected_task)
+            elif user_choice == 5:
+                break
+        except Exception as e:
+            print(f"Error: {e}")
