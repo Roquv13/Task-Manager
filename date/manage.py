@@ -8,7 +8,7 @@ def current():
     today_date = datetime.strptime(today_nums, "%d/%m/%Y").date()
     return today_date
 
-def remaining_days(task):
+def get_days(task):
     today = current()
     if task in task_deadlines:
         days_left = (task_deadlines[task] - today).days
@@ -19,24 +19,24 @@ def remaining_days(task):
     else:
         return None
 
-def get_deadline(task):
+def get(task):
     if task in task_deadlines:
         task_deadline = task_deadlines[task]
         return task_deadline
     else:
         print("Deadline is not setted")
 
-def add_deadline(task, deadline):
+def add(task, deadline):
     try:
         task_deadlines[task] = deadline
         print(f"Deadline set for task {task}")
     except ValueError:
         print("Invalid date format.")
 
-def set_deadline(task):
+def set(task):
     if task in task_deadlines:
         print("Task already has a deadline set.")
-        task_deadline = get_deadline(task)
+        task_deadline = get(task)
         print(f"Deadline for this task: {task_deadline}")
     else:
         while True:
