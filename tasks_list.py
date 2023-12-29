@@ -1,5 +1,5 @@
 import exceptions
-import task.interface
+import task
 
 def create(lists):
     try:
@@ -8,7 +8,7 @@ def create(lists):
             raise exceptions.ExistsException("List already exists.")
         lists[list_name] = {}
         print(f"List '{list_name}' created.")
-        task.interface.menu(list_name, lists[list_name])
+        task.menu(list_name, lists[list_name])
     except Exception as e:
         print(f"Error: {e}")
 
