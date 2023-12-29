@@ -1,6 +1,7 @@
 import exceptions
-import mark.manage
-import date.manage
+import mark
+import date
+import exceptions
 
 def get_name():
     name = input("Enter name of task: ")
@@ -32,7 +33,7 @@ def add(tasks):
         if name in tasks:
             raise exceptions.ExistsException("Task already exists")
         tasks[name] = text
-        date.manage.set_deadline(name)
+        date.date.set_deadline(name)
         print(f"Task '{name}' added.")
     except exceptions.ExistsException as e:
         print(f"Error: {e}")
@@ -63,9 +64,9 @@ def edit(tasks):
                 #Move mark
                 mark.manage.move(old_name, new_name, tasks)
                 #Move date
-                deadline_old = date.manage.task_deadlines.get(old_name)
-                date.manage.add_deadline(new_name, deadline_old)
-                date.manage.delete(old_name)
+                deadline_old = date.task_deadlines.get(old_name)
+                date.date.add_deadline(new_name, deadline_old)
+                date.delete(old_name)
                 #Pop out task with old name
                 tasks.pop(old_name)
             elif user_choice == 2:
@@ -85,7 +86,7 @@ def display(tasks):
             raise exceptions.ExistsException("Task does not exists.")
         else:
             for task, text in tasks.items():
-                print(task, "-", text, "-", mark.manage.get(task), "-", date.manage.remaining_days(task))
+                print(task, "-", text, "-", mark.manage.get(task), "-", date.date.remaining_days(task))
     except Exception as e:
         print(f"Error: {e}")
 
@@ -101,3 +102,30 @@ def select(tasks):
     except Exception as e:
         print(f"Error: {e}")
         return None, None
+    
+def menu(name_list, selected_list):
+    while True:
+        try:    
+            print(f"\nTask list '{name_list}'\n1. Add task\n2. Mark task\n3. Edit task\n4. Delete task\n5. Print tasks\n6. Clear tasks\n7. Back")
+            user_choice = int(input("Select: "))
+            if user_choice < 1 or user_choice > 7:
+                raise exceptions.BadValue("Number must be in range from 1 to 6.")
+            if user_choice == 1:
+                add(selected_list)
+            elif user_choice == 2:
+                if len(selected_list) != 0:
+                    mark.menu(selected_list)
+            elif user_choice == 3:
+                get_tasks(selected_list)
+                edit(selected_list)
+            elif user_choice == 4:
+                get_tasks(selected_list)
+                delete(selected_list)
+            elif user_choice == 5:
+                display(selected_list)
+            elif user_choice == 6:
+                clear(selected_list)
+            elif user_choice == 7:
+                break
+        except Exception as e:
+            print(f"Error: {e}")
