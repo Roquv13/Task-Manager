@@ -33,7 +33,7 @@ def add(tasks):
         if name in tasks:
             raise exceptions.ExistsException("Task already exists")
         tasks[name] = text
-        deadline.set_deadline(name)
+        deadline.set(name)
         print(f"Task '{name}' added.")
     except exceptions.ExistsException as e:
         print(f"Error: {e}")
@@ -65,7 +65,7 @@ def edit(tasks):
                 mark.manage.move(old_name, new_name, tasks)
                 #Move date
                 deadline_old = deadline.task_deadlines.get(old_name)
-                deadline.date.add_deadline(new_name, deadline_old)
+                deadline.add(new_name, deadline_old)
                 deadline.delete(old_name)
                 #Pop out task with old name
                 tasks.pop(old_name)
@@ -86,7 +86,7 @@ def display(tasks):
             raise exceptions.ExistsException("Task does not exists.")
         else:
             for task, text in tasks.items():
-                print(task, "-", text, "-", mark.manage.get(task), "-", deadline.date.remaining_days(task))
+                print(task, "-", text, "-", mark.manage.get(task), "-", deadline.remaining_days(task))
     except Exception as e:
         print(f"Error: {e}")
 
