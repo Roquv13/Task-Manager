@@ -10,7 +10,7 @@ def get_text():
     text = input("Enter text for task: ")
     return text
 
-def get_task():
+def task():
     try:
         name = get_name()
         text = get_text()
@@ -28,7 +28,7 @@ def get_tasks(tasks):
     
 def add(tasks):
     try:
-        name, text = get_task()
+        name, text = task()
         if name in tasks:
             raise exceptions.ExistsException("Task already exists")
         tasks[name] = text
