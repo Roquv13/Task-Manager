@@ -1,5 +1,5 @@
-import list.interface as interface
+import tasks_list
 
 lists = {}
 
-interface.menu(lists)
+tasks_list.menu(lists)
