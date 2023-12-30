@@ -19,7 +19,7 @@ def task():
     except Exception as e:
         print(f"Error: {e}")
 
-def get_tasks(tasks):
+def get(tasks):
     if len(tasks) == 0:
             print("There is no task.")
     else:
@@ -116,10 +116,10 @@ def menu(name_list, selected_list):
                 if len(selected_list) != 0:
                     mark.menu(selected_list)
             elif user_choice == 3:
-                get_tasks(selected_list)
+                get(selected_list)
                 edit(selected_list)
             elif user_choice == 4:
-                get_tasks(selected_list)
+                get(selected_list)
                 delete(selected_list)
             elif user_choice == 5:
                 display(selected_list)
