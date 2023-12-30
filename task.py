@@ -70,11 +70,15 @@ def edit(tasks):
                 deadline.delete(old_name)
                 #Pop out task with old name
                 tasks.pop(old_name)
+                break
             elif user_choice == 2:
                 text = get_text()
                 tasks[name] = text
+                break
             elif user_choice == 3:
+                deadline.delete(name)
                 deadline.set(name)
+                break
             elif user_choice == 4:
                 break
     except Exception as e:
