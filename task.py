@@ -49,10 +49,11 @@ def delete(tasks):
 
 def edit(tasks):
     try:
-        name = get_name()
-        if name not in tasks:
-            raise exceptions.ExistsException("Task does not exists.")
         while True:
+            get(tasks)
+            name = get_name()
+            if name not in tasks:
+                raise exceptions.ExistsException("Task does not exists.")
             print(f"Task Edit\n1. Name\n2. Text\n3. Date\n4. Back")
             user_choice = int(input("Select: "))
             if user_choice == 1:
@@ -73,8 +74,7 @@ def edit(tasks):
                 text = get_text()
                 tasks[name] = text
             elif user_choice == 3:
-                print("change date in progress")
-                #deadline_new = date.manage.set_deadline(new_name)
+                deadline.set(name)
             elif user_choice == 4:
                 break
     except Exception as e:
@@ -116,7 +116,6 @@ def menu(name_list, selected_list):
                 if len(selected_list) != 0:
                     mark.menu(selected_list)
             elif user_choice == 3:
-                get(selected_list)
                 edit(selected_list)
             elif user_choice == 4:
                 get(selected_list)
