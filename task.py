@@ -86,7 +86,7 @@ def display(tasks):
             raise exceptions.ExistsException("Task does not exists.")
         else:
             for task, text in tasks.items():
-                print(task, "-", text, "-", mark.get(task), "-", deadline.remaining_days(task))
+                print(task, "-", text, "-", mark.get(task), "-", deadline.get_days(task))
     except Exception as e:
         print(f"Error: {e}")
 
