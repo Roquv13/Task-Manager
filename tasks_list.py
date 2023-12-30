@@ -23,7 +23,6 @@ def select(lists):
         return None, None
     
 def delete(lists):
-    get_lists()
     try:
         list_name = input("Enter name of list to delete or type EXIT: ")
         if list_name.upper() == "EXIT":
@@ -36,7 +35,7 @@ def delete(lists):
     except Exception as e:
         print(f"Error: {e}")
 
-def get_lists(lists):
+def get(lists):
     if len(lists) == 0:
         print("There is no list.")
     else:
@@ -54,13 +53,13 @@ def menu(lists):
             if choice_int == 1:
                 create(lists)
             elif choice_int == 2:
-                get_lists(lists)
+                get(lists)
                 name_list, selected_list = select(lists)
                 task.menu(name_list, selected_list)
             elif choice_int == 3:
                 delete(lists)
             elif choice_int == 4:
-                get_lists(lists)
+                get(lists)
             elif choice_int == 5:
                 break
         except Exception as e:
