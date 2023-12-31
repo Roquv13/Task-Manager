@@ -2,6 +2,7 @@ import exceptions
 import mark
 import deadline
 import exceptions
+import sort_task
 
 def get_name():
     name = input("Enter name of task: ")
@@ -127,8 +128,10 @@ def menu(name_list, selected_list):
             elif user_choice == 5:
                 display(selected_list)
             elif user_choice == 6:
-                clear(selected_list)
+                sort_task.menu(tasks)
             elif user_choice == 7:
+                clear(selected_list)
+            elif user_choice == 8:
                 break
         except Exception as e:
             print(f"Error: {e}")
