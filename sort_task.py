@@ -2,9 +2,12 @@
 def name(tasks):
     return dict(sorted(tasks.items()))
 
+def text(tasks):
+    
+
 #Test
-tasks = {3: "abcd", 1: "bacd", 2: "cabd"}
+tasks = {3: "bacd", 1: "abcd", 2: "cabd"}
 print (tasks)
 
-tasks = name(tasks)
+tasks = text(tasks)
 print(tasks)
