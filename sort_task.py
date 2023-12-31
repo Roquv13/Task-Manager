@@ -3,7 +3,7 @@ def name(tasks):
     return dict(sorted(tasks.items()))
 
 def text(tasks):
-    
+    return dict(sorted(tasks.items(), key=lambda item: item[1]))
 
 #Test
 tasks = {3: "bacd", 1: "abcd", 2: "cabd"}
