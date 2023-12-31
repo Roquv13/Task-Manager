@@ -9,7 +9,7 @@ def text(tasks):
 def menu(name_list, selected_list):
     while True:
         try:    
-            print(f"\nTask list '{name_list} sort by: '\n1. Name\n2. Text\n3. Back")
+            print(f"\nTask list '{name_list}' sort by:\n1. Name\n2. Text\n3. Back")
             user_choice = int(input("Select: "))
             if user_choice < 1 or user_choice > 3:
                 raise exceptions.BadValue("Number must be in range from 1 to 3.")
