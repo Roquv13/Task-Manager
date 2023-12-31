@@ -19,6 +19,7 @@ def menu(name_list, selected_list):
                 selected_list = text(selected_list)
             elif user_choice == 3:
                 break
+            return selected_list
         except Exception as e:
             print(f"Error: {e}")
 
