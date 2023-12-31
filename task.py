@@ -128,7 +128,7 @@ def menu(name_list, selected_list):
             elif user_choice == 5:
                 display(selected_list)
             elif user_choice == 6:
-                sort_task.menu(tasks)
+                sort_task.menu(selected_list)
             elif user_choice == 7:
                 clear(selected_list)
             elif user_choice == 8:
