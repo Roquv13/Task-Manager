@@ -113,8 +113,8 @@ def menu(name_list, selected_list):
         try:    
             print(f"\nTask list '{name_list}'\n1. Add task\n2. Mark task\n3. Edit task\n4. Delete task\n5. Print tasks\n6. Sort tasks\n7. Clear tasks\n8. Back")
             user_choice = int(input("Select: "))
-            if user_choice < 1 or user_choice > 7:
-                raise exceptions.BadValue("Number must be in range from 1 to 6.")
+            if user_choice < 1 or user_choice > 8:
+                raise exceptions.BadValue("Number must be in range from 1 to 8.")
             if user_choice == 1:
                 add(selected_list)
             elif user_choice == 2:
@@ -128,7 +128,7 @@ def menu(name_list, selected_list):
             elif user_choice == 5:
                 display(selected_list)
             elif user_choice == 6:
-                sort_task.menu(name_list, selected_list)
+                selected_list = sort_task.menu(name_list, selected_list)
             elif user_choice == 7:
                 clear(selected_list)
             elif user_choice == 8:
