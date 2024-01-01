@@ -11,7 +11,7 @@ Tools for managing tasks in the workplace, allowing you to assign tasks to proje
 4. Deleting and Editing Tasks:
    - Providing the ability to delete and edit existing tasks. The user should be able to change the task status.
 5. Task Categories:
-   - Added category options for tasks, allowing the user to easily sort and view tasks by duty type.
+   - Category options for tasks, allowing the user to easily sort and view tasks by duty type.
 6. Task Priorities
    - Introducing the ability to set priorities for tasks so that the user can focus on the most important responsibilities.
 7. Filtering and Sorting:
