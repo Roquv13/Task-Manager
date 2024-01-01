@@ -3,7 +3,7 @@
 Tools for managing tasks in the workplace, allowing you to assign tasks to projects, track progress, set priorities and assign tasks to specific people.
 
 1. User Interface:
-   - Create a simple user interface that allows you to easily add, remove and edit homework assignments.
+   - Simple user interface that allows you to easily add, remove and edit homework assignments.
 2. Task List:
    - Displaying a list of current household tasks, with the ability to filter by category (e.g. cleaning, cooking, shopping).
 3. Adding Tasks:
