@@ -1,4 +1,4 @@
-# Task Manager App Readme
+# Task Manager App
 
 ## Overview
 
@@ -6,11 +6,20 @@ Welcome to our Task Manager application! This lightweight yet powerful tool is d
 
 ## Features
 
-1. **Task Creation**: Easily add tasks with titles, descriptions, and due dates.
-2. **Task Categories**: Organize tasks into categories for better workflow management.
-3. **Priority Levels**: Assign priority levels to tasks, ensuring you focus on what matters most.
-4. **Search and Filter**: Quickly locate tasks with the search and filter options.
-5. **User-Friendly Interface**: Intuitive design for a seamless user experience.
+1. **User Interface**
+   - Simple user interface that allows you to easily add, remove and edit homework assignments.
+2. **List**
+   - Displaying a list of current household tasks, with the ability to filter by category.
+3. **Adding Tasks**
+   - Implementation of the function of adding new tasks to the list. The user should be able to specify the task name, description, category and due date.
+4. **Deleting and Editing Tasks**
+   - Providing the ability to delete and edit existing tasks. The user should be able to change the task status.
+5. **Task Categories**
+   - Organize tasks into categories for better workflow management..
+6. **Priority level**
+   - Ability to set priorities for tasks so that the user can focus on the most important responsibilities.
+7. **Filtering and Sorting**
+   - Quickly locate tasks with the search and filter options.
 
 ## Usage
 
