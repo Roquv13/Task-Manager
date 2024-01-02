@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to our Task Manager application! This lightweight yet powerful tool is designed to help you efficiently manage your tasks and boost productivity. Here's a quick guide to get you started:
+Welcome to our Task Manager application! This lightweight yet powerful tool is designed to help you efficiently manage your tasks and boost productivity.
 
 ## Features
 
