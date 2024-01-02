@@ -1,6 +1,6 @@
-# Application for managing tasks at work:
+# Application for managing tasks:
 
-Tools for managing tasks in the workplace, allowing you to assign tasks to projects, track progress, set priorities and assign tasks to specific people.
+In the workplace, allowing you to assign tasks to projects, track progress, set priorities and assign tasks to specific people.
 
 1. User Interface:
    - Simple user interface that allows you to easily add, remove and edit homework assignments.
